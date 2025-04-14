@@ -6,6 +6,10 @@ pipeline {
         IMAGE_TAG = "v${BUILD_NUMBER}-${new Date().format('yyyyMMdd')}"
         FULL_IMAGE_NAME = "amendhouibi22/java_app:${IMAGE_TAG}"
     }
+    
+    tools {
+    maven 'maven' // le nom que tu as donné dans Jenkins
+    }
 
     triggers {
         githubPush() // déclenché par un webhook GitHub
